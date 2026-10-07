@@ -36,7 +36,10 @@ Add a "WP Factory guardrails" section to `CLAUDE.md` at the project root, creati
 
 ## Task — finish Phase A
 
-Run this without asking me. Stop only if a guardrail would be broken.
+Hands-off operation: this session runs in auto mode with no approval prompts.
+- Never pause to ask me anything. Make the call, record it under "Decisions" in `PHASE_A_REPORT.md`, and keep going until every step below is complete.
+- If the auto-mode reviewer or a deny rule blocks an action, do not work around it. Skip that item, continue with the rest, and list the blocked item and its reason in your final reply.
+- Stop early only if a guardrail would be broken.
 
 1. **Verify the audit rather than trusting it.** Codex marked many rows done in short, quick passes.
    - For each row in `phase-a-audit.md`, open the evidence it cites (file and test name). Confirm it exists and does what the row says, then run that row's targeted tests.
