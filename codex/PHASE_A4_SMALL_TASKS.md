@@ -133,6 +133,19 @@ If any failed test is not one of the 3 D4a legal tests, fix it if it is in Phase
 Update the D3, D4, and D5 rows. Reply with the totals, the failed test names, the diff-check and secret-scan results, and then every audit row as "ID — status", one per line.
 ```
 
+**Message 7d — Get a clean full-suite run (if the suite shows EBUSY / 0 tests)**
+
+```text
+Task 7d (D4 only). Standing rules apply. The last full-suite run executed 0 tests; all 52 suites failed at setup with SQLite EBUSY. Find and fix the cause:
+1. Leftover processes: list node processes whose command line contains "vitest" and this repo's path. Stop only those, since they are leftover test runners. Do not stop anything else.
+2. Identify the test database file used by the test setup. If any process other than vitest holds it (for example the live backend or a dev server), do not touch that process: report it and stop.
+3. Check the vitest version (npx vitest --version) and use the matching single-thread option. "--threads false" is the old flag; newer versions use --no-file-parallelism or --pool=forks with a single fork. Update the official test command in PHASE_A_REPORT.md if it changes.
+4. Check dbMigrationIdempotency.test.ts: it must use only its own temp database, and must restore in afterAll any environment variable or module-level database path or state it changes. Fix it if it does not.
+5. Run the full suite single-threaded, first with normal output, then with --reporter=json --outputFile=docs/changes/test-results.json.
+If EBUSY persists and the cause is in a file Phase A created or changed, fix it. If the cause is in the pre-existing test harness, report the exact error, file path, and setup step, and stop.
+Update the D4 row. Reply with the total, passed, and failed counts, the names of any failed tests, and the cause of the EBUSY.
+```
+
 **Message 7c — Patch and report**
 
 ```text
