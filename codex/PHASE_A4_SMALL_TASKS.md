@@ -93,6 +93,39 @@ Task 7 of 7 (close-out). Standing rules apply.
 5. Reply with the full audit table and the test totals. This reply may be longer than 5 lines.
 ```
 
+## If Message 7 stops partway: send these instead, one at a time
+
+**Status check**
+
+```text
+Before continuing: list every row in docs/changes/phase-a-audit.md as "ID — status", one per line, with no other text.
+```
+
+If any row from Tasks 1–6 is not `done`, re-send that task's message before going on.
+
+**Message 7a — Migration idempotency test**
+
+```text
+Task 7a (D3 only). Standing rules apply.
+Add an automated test that runs the migration twice on a v1.0-shaped DB copy and twice on a fresh DB, both in a temp directory. Assert that existing data survives and old score runs stay tagged v1.0. Run it, update the D3 row, and reply in 5 lines or fewer.
+```
+
+**Message 7b — Run all checks**
+
+```text
+Task 7b (D4, D5). Standing rules apply.
+Run the backend build, the control-panel build, rubric schema validation, the full single-threaded backend suite, git diff --check, and a secret scan.
+If a test that Phase A added or changed fails, fix it. Do not change anything outside Phase A's files. The 3 legal tests are covered by D4a.
+Update the D4 and D5 rows. Reply with each check's result and the test totals.
+```
+
+**Message 7c — Patch and report**
+
+```text
+Task 7c (D6). Standing rules apply.
+Regenerate docs/changes/phase-a.patch against the original snapshots and update docs/changes/PHASE_A_REPORT.md. Reply with the full audit table and the test totals.
+```
+
 ---
 
-After Message 7, send Codex's reply to me. If every row is `done` (D4a may be "pre-existing"), Phase B is next.
+After Message 7 (or 7c), send Codex's reply to me. If every row is `done` (D4a may be "pre-existing"), Phase B is next.
