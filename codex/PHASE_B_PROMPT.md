@@ -1,6 +1,6 @@
 # WP Factory — Phase B: deploy v1.1 and verify live
 
-> Send this only after the Phase A.2 audit shows every row `done`, and after you have run `Start-WPFactory-Vault.ps1` in your own interactive PowerShell window and unlocked LocalVault. Fill in the dollar limit below before sending; the run limit is already set.
+> Send this only after the Phase A.3 audit shows every row `done`, and after you have run `Start-WPFactory-Vault.ps1` in your own interactive PowerShell window and unlocked LocalVault. Fill in the dollar limit below before sending; the run limit is already set.
 
 ## Operating mode (read first)
 
@@ -9,7 +9,7 @@
   - The editorial run in step 5 counts toward the dollar limit, not the run limit.
   - Before each paid call, estimate its cost from the token count and the provider's current published price. Skip the call if the estimate would push the total over the dollar limit.
   - Log actual spend per call. Stop paid testing when either limit is reached.
-- Pre-flight: confirm `docs/changes/phase-a-audit.md` shows every row `done`. D4 may rely on D4a's documented pre-existing legal-test failures. If any other row is not `done`, stop and tell me. Run tests single-threaded, using the official offline test command recorded in `PHASE_A_REPORT.md`.
+- Pre-flight: confirm `docs/changes/phase-a-audit.md` shows every row `done`. D4 may rely on D4a's documented pre-existing legal-test failures. If D4a is "unproven", or any other row is not `done`, stop and tell me. Run tests single-threaded, using the official offline test command recorded in `PHASE_A_REPORT.md`.
 - Score floors run in `advisory` mode (set in Phase A.1). Fatal gates block publication. Floors warn, and can be overridden only by a named editor of record with a recorded reason.
 - Hard stops (never do these):
   1. Never read, print, log, copy, or persist the vault password or any provider key. Use only the mechanisms the vault-backed scripts already expose.
