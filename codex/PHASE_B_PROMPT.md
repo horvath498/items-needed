@@ -1,11 +1,16 @@
 # WP Factory — Phase B: deploy v1.1 and verify live
 
-> Send this only after Phase A's report shows every done criterion passing, and after you have run `Start-WPFactory-Vault.ps1` in your own interactive PowerShell window and unlocked LocalVault. Fill in the two spend limits below before sending.
+> Send this only after the Phase A.1 audit shows every row `done`, and after you have run `Start-WPFactory-Vault.ps1` in your own interactive PowerShell window and unlocked LocalVault. Fill in the dollar limit below before sending; the run limit is already set.
 
 ## Operating mode (read first)
 
 - I have run `Start-WPFactory-Vault.ps1` in my own interactive PowerShell window and unlocked LocalVault. You have standing approval to run this whole phase end to end. Do not stop to ask me for permission between steps. Record every judgment call under "Decisions" in the report.
-- Paid-call limits: total provider spend must not exceed **$[FILL IN]**, and run at most **[FILL IN]** scoring runs. Track spend as you go, and stop paid testing when either limit is reached.
+- Paid-call limits: total provider spend must not exceed **$[FILL IN]**, and run at most **3** scoring runs: one for step 5, one for step 6's passing paper, and one retry if a run fails.
+  - The editorial run in step 5 counts toward the dollar limit, not the run limit.
+  - Before each paid call, estimate its cost from the token count and the provider's current published price. Skip the call if the estimate would push the total over the dollar limit.
+  - Log actual spend per call. Stop paid testing when either limit is reached.
+- Pre-flight: confirm `docs/changes/phase-a-audit.md` shows every row `done`. If any row is not, stop and tell me.
+- Score floors run in `advisory` mode (set in Phase A.1). Fatal gates block publication. Floors warn, and can be overridden only by a named editor of record with a recorded reason.
 - Hard stops (never do these):
   1. Never read, print, log, copy, or persist the vault password or any provider key. Use only the mechanisms the vault-backed scripts already expose.
   2. Never commit, stash, reset, checkout, clean, or reformat the pre-existing uncommitted work.
@@ -30,7 +35,10 @@
 5. **Paid tests, within the limits above:**
    - One editorial run and one RIS/EIS scoring run on a test paper.
    - Confirm the judge model is a different family from the drafter, two passes ran, and per-dimension divergence, `rubricVersion`, `promptHash`, and `calibrationStatus` were recorded.
-6. **Live end to end:** research → claims and sources → gates → review roles → RIS/EIS score → publication rule → scheduled promotion. Show one paper failing a fatal gate (blocked) and one passing.
+6. **Live end to end:** research → claims and sources → gates → review roles → RIS/EIS score → publication rule → scheduled promotion.
+   - Show one paper failing a fatal gate. It must be blocked before any paid scoring, so it uses no scoring run.
+   - Show one paper passing all gates and reaching scheduled promotion.
+   - If the passing paper scores below a floor, show the advisory warning, and that publication requires the editor override with a recorded reason.
 
 ## Rollback
 
