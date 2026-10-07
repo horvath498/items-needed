@@ -1,6 +1,6 @@
 # WP Factory — Phase B: deploy v1.1 and verify live
 
-> Send this only after the Phase A.3 audit shows every row `done`, and after you have run `Start-WPFactory-Vault.ps1` in your own interactive PowerShell window and unlocked LocalVault. Fill in the dollar limit below before sending; the run limit is already set.
+> Send this only after Phase A.4 Task 7 shows every audit row `done`, and after you have run `Start-WPFactory-Vault.ps1` in your own interactive PowerShell window and unlocked LocalVault. Fill in the dollar limit below before sending; the run limit is already set.
 
 ## Operating mode (read first)
 
