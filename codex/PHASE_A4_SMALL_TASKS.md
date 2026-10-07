@@ -25,7 +25,8 @@ Task 1 of 7 (S4.1, S4.4 backend). Standing rules apply.
 1. Persist score-run metadata on every new score run: rubricVersion, drafterModel, judgeModel, promptHash, passCount, perPassScores (JSON), divergence (JSON), and calibrationStatus. Leave existing rows as they are; they stay tagged v1.0.
 2. Add a calibration_set table with these fields: id, tenantId, paperId, scorer, humanRis, humanEis, perDimension (JSON), createdAt. Add tenant-scoped create, list, get, and update endpoints.
 3. Add a calibration-status function and endpoint that uses the existing agreement calculation. "Calibrated" means at least 10 papers, with mean absolute difference ≤5 for both RIS and EIS.
-4. Tests: the metadata is persisted on a mocked score run; tenant isolation holds on calibration_set; the status flips from uncalibrated to calibrated with fixtures.
+4. Wire the existing judge-family check and two-pass divergence logic into the real scoring path (S4.2, S4.3), using a mocked judge. A same-family judge is rejected by default, and two passes run, with divergence stored per dimension.
+5. Tests: the metadata is persisted on a mocked score run; a same-family judge is rejected; tenant isolation holds on calibration_set; the status flips from uncalibrated to calibrated with fixtures.
 ```
 
 ## Message 2 — Publication outcomes and source verification (S6.2, S7.1)
@@ -33,10 +34,10 @@ Task 1 of 7 (S4.1, S4.4 backend). Standing rules apply.
 ```text
 Task 2 of 7 (S6.2, S7.1). Standing rules apply.
 1. Add a publication_outcomes table with these fields: id, tenantId, publicationId, metric, value, observedAt, source, notes. Add tenant-scoped create, read, update, and list endpoints.
-2. In the source register, persist verificationLevel (primary_verified | secondary_only | unverified | conflicting), verifiedUrl, verifiedExcerpt, and verifiedAt. Validation: primary_verified requires both a URL and an excerpt.
+2. In the source register, persist verificationLevel (primary_verified | secondary_only | unverified | conflicting), verifiedUrl, verifiedExcerpt, verifiedAt, and aiDiscovered (boolean). Validation: primary_verified requires both a URL and an excerpt. Apply the existing AI-discovered-citation rule (S4.5) on save or at gate time: an aiDiscovered source with no DOI or URL match cannot support a claim until it is primary_verified.
 3. Seed the statistics from the v1.1 doc into the source register, each with its verification level.
 4. Confirm that grep finds zero "utm_" in the v1.1 doc and rubric.
-5. Tests: outcomes CRUD and tenant isolation; primary_verified is rejected without a URL or an excerpt; the seed runs idempotently.
+5. Tests: outcomes CRUD and tenant isolation; primary_verified is rejected without a URL or an excerpt; the aiDiscovered rule blocks an unverified source; the seed runs idempotently.
 ```
 
 ## Message 3 — Intake flags, gate selection, authors (S5.1, S5.2)
@@ -74,7 +75,7 @@ Task 6 of 7 (S4.4 UI). Standing rules apply.
 1. PaperConsole shows the calibration status, the agreement figures (paper count, and the RIS and EIS mean absolute difference), and the current scoreFloorsMode.
 2. Scores show "proposed — uncalibrated" until calibrated.
 3. A below-floor score in advisory mode shows a warning, plus an editor-override field with a required reason that is saved.
-4. Confirm that the "Executive Digest" label appears everywhere the old derivative name used to.
+4. S1.2: confirm that the "Executive Digest" label appears everywhere the old derivative name used to, in docs, rubric, enums, and UI. Also confirm that the migration maps any stored old derivative value to Executive Digest, with a test.
 5. Add component tests if the repo has them; otherwise list the manual checks you ran. The control-panel build must pass.
 ```
 
