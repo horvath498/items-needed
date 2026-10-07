@@ -157,6 +157,19 @@ Task 7e (D4 only). Standing rules apply. Do not run the suite twice in a row: ba
 Update the D4 row.
 ```
 
+**Message 7f — Run the suite in the background and wait for totals (if output stops before the summary)**
+
+```text
+Task 7f (D4 only). Standing rules apply. The last run's output stopped before the summary, most likely because the run outlasts your command time limit. Run it detached and poll instead:
+1. Confirm that no node process with "vitest" in its command line is running.
+2. Start the official test command detached from the backend folder, with all output going to a file, and record the PID. For example:
+   $p = Start-Process -FilePath cmd.exe -ArgumentList '/c','npx vitest run --threads false > ..\docs\changes\test-run.txt 2>&1' -WorkingDirectory "<repo>\backend" -WindowStyle Hidden -PassThru; $p.Id
+3. Poll with short, separate commands, each well under your time limit: check Get-Process -Id <PID>, and wait about 30 seconds between checks. Never start a second run while this one is running. Give up after 30 minutes.
+4. When it exits, show the last 40 lines of docs\changes\test-run.txt. Reply with the "Test Files" and "Tests" summary lines exactly as printed, the names of any failed tests, and any suites that failed during setup.
+5. If it is still running after 30 minutes, show the last 40 lines and name the last test file that started, since that file is probably hanging. Stop the process tree you started, and report.
+Update the D4 row.
+```
+
 **Message 7c — Patch and report**
 
 ```text
