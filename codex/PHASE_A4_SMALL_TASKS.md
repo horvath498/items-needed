@@ -146,6 +146,17 @@ If EBUSY persists and the cause is in a file Phase A created or changed, fix it.
 Update the D4 row. Reply with the total, passed, and failed counts, the names of any failed tests, and the cause of the EBUSY.
 ```
 
+**Message 7e — One clean run, with exact totals (if 7d's results were incomplete)**
+
+```text
+Task 7e (D4 only). Standing rules apply. Do not run the suite twice in a row: backend/vitest.setup.ts deletes backend/data/test/lucent.test.db, and Windows refuses to delete it while any handle is still open.
+1. Confirm that no node process with "vitest" in its command line is running. Wait until none is.
+2. Run the full suite once, single-threaded, with normal output, using the official test command from PHASE_A_REPORT.md, and save the console output: <official command> 2>&1 | Tee-Object -FilePath docs/changes/test-run.txt
+3. Reply with the final "Test Files" and "Tests" summary lines exactly as printed, the names of any failed tests, and the names of any suites that failed before running tests (setup errors such as EBUSY).
+4. If any suite failed at setup with EBUSY, check whether a test file or module that Phase A created or changed opens lucent.test.db (directly or through the db module) without closing it after its tests. If so, fix Phase A's code to close it in afterAll, wait for vitest to exit, and run once more. If the open handle comes from pre-existing code, report the file and stop.
+Update the D4 row.
+```
+
 **Message 7c — Patch and report**
 
 ```text
