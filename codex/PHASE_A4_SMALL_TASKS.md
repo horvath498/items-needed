@@ -119,6 +119,19 @@ If a test that Phase A added or changed fails, fix it. Do not change anything ou
 Update the D4 and D5 rows. Reply with each check's result and the test totals.
 ```
 
+**Message 7b-retry — Run each check separately, with exact totals**
+
+```text
+Task 7b-retry (D3, D4, D5 rows). Standing rules apply.
+Run each command separately, so that one failure does not skip the rest:
+1. Full suite, single-threaded, with machine-readable results: npx vitest run --threads false --reporter=json --outputFile=docs/changes/test-results.json (or the repo's equivalent single-thread flag). From that file, report total, passed, and failed counts, and list the name of every failed test.
+2. git diff --check
+3. The secret scan over your changes
+4. In dbMigrationIdempotency.test.ts, close the SQLite connection before temp-dir cleanup if the db module allows it. If it cannot be closed, keep the current behavior and note why.
+If any failed test is not one of the 3 D4a legal tests, fix it if it is in Phase A's files; otherwise list it.
+Update the D3, D4, and D5 rows. Reply with the totals, the failed test names, the diff-check and secret-scan results, and then every audit row as "ID — status", one per line.
+```
+
 **Message 7c — Patch and report**
 
 ```text
