@@ -2,252 +2,644 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//items-needed//launch-playbook//EN
 CALSCALE:GREGORIAN
-X-WR-CALNAME:Launch & Marketing Sprint
+X-WR-CALNAME:Launch & Marketing Plan
 BEGIN:VEVENT
-UID:launch-20261014-0@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261014@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261015
-SUMMARY:Sprint — Day 0 · Decide & unblock
-DESCRIPTION:Public: No public post\nSean: Answer decisions D1–D8 (15m) | 
- Mailgun domain + DNS records (20m) | Stripe live-webhook check (10m) | Lin
- kedIn page admin access (10m)\nClaude: Draft P1 post + snippet copy | W2SA
-  phone hotfix PR | UTM sheet + analytics check | P1 page → W2SA CTA chec
- k | Portal URL + LV freeze check\nCodex: Confirm P2 ran + QA | Commit & pu
- sh all WIP | Start social-generator fix | P3: source 2 facts
+SUMMARY:Launch plan — Day 0 · Decide & unblock
+DESCRIPTION:Sean (T0): Answer decisions D1–D8 (15m) — Reply only where 
+ you disagree\; defaults lock at 9:00 Thu.\nSean (T0): Mailgun domain + DNS
+  (20m) — Add mg.w2sa.online\; paste SPF\, DKIM\, MX\, CNAME at your DNS 
+ host\; DMARC p=none.\nSean (T0): Stripe webhook check (10m) — Live endpo
+ int deliveries all 2xx? If not\, stop and fix first — it's revenue.\nSea
+ n (T0): LinkedIn admin access (10m) — Admin on the LV + W2SA company pag
+ es\; create any that are missing.\nClaude: Draft P1 post + snippets — An
+ nouncement/breakdown + 6–8 snippet lines\, by hand from the P1 paper.\nC
+ laude: W2SA phone hotfix PR — Skip intro on phones\, Data Saver\, reduce
+ d motion\; skip button ≥44 px.\nClaude: UTM sheet + analytics — One ta
+ gged link per post\; both sites record UTM visits.\nClaude: P1 page → W2
+ SA CTA — Visible\, UTM-tagged link to the free Digital Health Check.\nCo
+ dex: Confirm P2 ran + QA — Find the 09:00 ET run\, run quality checks\, 
+ flag for Sean.\nCodex: Commit & push all WIP — WP Factory\, LV\, Full Bu
+ ild Factory P1–P4 — nothing local-only.\nCodex: Start generator fix 
+ — Apply the fix defined in the WP Factory sitrep.\nCodex: P3: source 2 f
+ acts — Primary sources only\; link + quote each for Sean.\nDone when: De
+ cisions in · DNS added · webhook confirmed · no local-only work
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261015-1@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261015@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261016
-SUMMARY:Sprint — Day 1 · First post\, phones fixed
-DESCRIPTION:Public: P1 announcement — LinkedIn (Sean + LV page)\nSean: 9:
- 00 approve & post (20m) | Real-phone test (15m) | Review P2 (30m)\nClaude:
-  Ship phone hotfix + skip button | Mobile intro cut ≤1.5 MB | Billing Op
- tion B build | Mailgun wiring + email + opt-in | Snippet-card template | P
- roduct lookup case fix\nCodex: Generator fix + guard test | Regenerate P1 
- social pack | P3 facts drafted | Full Build Factory P4 checkpoint
+SUMMARY:Launch plan — Day 1 · First post\, phones fixed
+DESCRIPTION:What the market sees: ★ P1 announcement — LinkedIn 9:00 (Se
+ an)\, LV page reposts. CTA → free Health Check.\nSean (T0): 9:00 approve
+  & post (20m) — Post\, repost from the LV page\, reply to comments same 
+ day.\nSean (T0): Real-phone test (15m) — iPhone + Android\, Wi-Fi off\, 
+ LinkedIn in-app\; submit a test Health Check.\nSean (T0): 16:00 review P2 
+ (30m) — Mark fixes\; approve or send back to Codex.\nClaude: Ship phone 
+ hotfix — Deploy\, re-test on phones\, save before/after screenshots.\nCl
+ aude: Billing Option B build — Read-only key on W2SA Stripe\; charges in
+ to DBR as source=brand-nexus.\nClaude: Mailgun wiring + opt-in — Email t
+ emplate\, unsubscribe link\, unticked opt-in on form + P1 page.\nClaude: S
+ nippet-card template — 1080×1350 code template\; render the first 3 P1 
+ cards.\nCodex: Generator fix + guard test — Fails on <300 chars\, a slug
+ \, or no hook / 3 points / CTA.\nCodex: Regenerate P1 social pack — Comp
+ are with Claude's copy\; keep the stronger lines.\nCodex: P3 facts drafted
+  — Both facts with sources\, ready for Sean on Fri.\nCodex: Build Factor
+ y P4 checkpoint — Make the P4 tests pass and commit.\nDone when: P1 post
+ ed · W2SA passes on real phones · Option B shows data
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261016-2@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261016@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261017
-SUMMARY:Sprint — Day 2 · Machine running
-DESCRIPTION:Public: P1 carousel — LinkedIn\nSean: 9:00 post carousel (10m
- ) | 10:00 security hour w/ Claude | Confirm P3 facts (10m) | 16:00 gate re
- view (20m)\nClaude: Option B live + reconcile | Mailgun verified\, test se
- nd | Scorecard + baseline numbers | Queue next week's posts\nCodex: P2 fix
- es from review | P2 social pack | Full Build Factory committed → pause
+SUMMARY:Launch plan — Day 2 · Machine running
+DESCRIPTION:What the market sees: P1 carousel — LinkedIn document post\, 
+ 6–10 slides\, 9:00\; LV page reposts.\nSean (T0): 9:00 post carousel (10
+ m) — Post\, repost\, reply to comments.\nSean (T0): 10:00 security hour 
+ (60m) — With Claude: new key → n8n credential → test WF-101..105 →
+  revoke old key.\nSean (T0): Confirm P3 facts (10m) — Approve both\, or 
+ swap one.\nSean (T0): 16:00 gate review (20m) — Five criteria in playboo
+ k §10: green or red.\nClaude: Option B live + reconcile — Known brand-n
+ exus charge in DBR\; week total matches Stripe.\nClaude: Mailgun verified 
+ + test — Test to Sean. Not verified by 12:00 → 1:1 email fallback.\nCl
+ aude: Scorecard + baseline — Sheet with the §7.6 metrics\, baseline num
+ bers filled in.\nClaude: Queue Tue snippet wave — P1 snippet wave 1 sche
+ duled for Tue Oct 20\, 9:00.\nCodex: P2 fixes from review — Apply Sean's
+  Thursday notes.\nCodex: P2 social pack — First real run of the fixed ge
+ nerator.\nCodex: Build Factory → pause — Committed\, tested\, pushed 
+ — then stop.\nDone when: ★ MACHINE RUNNING — 5/5 gate criteria green
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261019-3@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261017@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:Launch plan — Day 3 · Get ahead
+DESCRIPTION:What the market sees: Facebook page goes live — W2SA page: co
+ ver\, About\, button → free Health Check. No post yet.\nSean (T0): Faceb
+ ook page setup (30m) — Cover\, About from w2sa.online\, CTA button (utm_
+ source=facebook).\nSean (T0): Warm-contact list (30m) — 20–30 people f
+ rom DBR CRM + inbox for email #1\; flag 1:1 notes.\nSean (T0): Paper scori
+ ng + keep/archive (45m) — Scoring checks\; keep or archive the 20 older 
+ papers (was Oct 26 wk).\nClaude: Mobile intro cut ≤1.5 MB — Portrait 7
+ 20p H.264\, poster frame\, preload=metadata (from Thu).\nClaude: Product l
+ ookup case fix — Lowercase brand-key compare + one test (from Thu).\nCla
+ ude: Render Week 1 cards — P1 cards 4–8 + the P2 teaser card.\nClaude:
+  LV + P1 page phone pass — Same checks as W2SA\; fix anything blocking t
+ he CTA.\nCodex: ★ P3 creation — Run with the confirmed facts (was Oct 
+ 23).\nCodex: P2 final + teaser assets — Final copy\, teaser excerpt\, 3 
+ pull-quotes (was Tue 20).\nDone when: P3 drafted · P2 final · Facebook l
+ ive · Week 1 cards ready
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261018@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:Launch plan — Day 4 · Queue the week
+DESCRIPTION:What the market sees: First Facebook post — "A website can lo
+ ok fine and still lose customers" → free check.\nSean (T0): Tunnel-token
+  rotation (30m) — With Claude\, low-traffic window\; LV loads after\; ro
+ llback ready (was Mon).\nSean (T0): Approve Week 1 queue (20m) — All pos
+ ts Mon–Fri + Tue email\; veto anything off.\nSean (T0): First-pass P3 re
+ view (30m) — Big-picture notes only\; line edits come Wed.\nClaude: Queu
+ e Week 1 posts — LinkedIn scheduler: Mon proof · Tue wave 1 · Wed teas
+ er · Thu P2 · Fri snippet.\nClaude: Schedule email #1 — Tue 9:30 via M
+ ailgun\, or 1:1 drafts in Sean's inbox.\nClaude: Pre-fill scorecard — Fr
+ i–Sun numbers in\, so Monday takes 15 min.\nClaude: Portal + LV freeze c
+ heck — Portal address responds\; LV deploy freeze confirmed lifted (from
+  Wed).\nCodex: P3 QA checks — Same quality checks as the 20 papers (was 
+ Wed 21).\nCodex: Apply Sean's P3 notes — Same day\, after the first-pass
+  review.\nDone when: Week 1 queued · tunnel rotated · P3 first review do
+ ne
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261019@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261019
 DTEND;VALUE=DATE:20261020
-SUMMARY:Sprint — Mon · Tracking starts
-DESCRIPTION:Public: W2SA proof post (sample-report finding)\nSean: Scorecar
- d #1 (15m) | Approve week queue (15m)\nClaude: 08:00 tunnel-token rotation
-  + LV check | Facebook page setup (channel 2)\nCodex: P3 creation (was 10/
- 23)
+SUMMARY:Launch plan — Tracking starts
+DESCRIPTION:What the market sees: W2SA proof post — LinkedIn + Facebook: 
+ "Contact form fails on mobile" — why it costs customers → free check.\
+ nSean (T0): Scorecard #1 (15m) — Baseline vs. Friday\; pick one thing to
+  change this week.\nClaude: Fix anything the scorecard flags — e.g. a br
+ oken UTM tag\, a missing analytics event.\nCodex: P3 revisions — Finish 
+ applying Sunday's notes.\nDone when: Weekly tracking live
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261020-4@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261020@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261020
 DTEND;VALUE=DATE:20261021
-SUMMARY:Sprint — Tue · Hard date
-DESCRIPTION:Public: ★ P1 snippet wave 1 | Audit-offer email #1\nSean: App
- rove email send (10m)\nClaude: Send + watch bounces/unsubs\nCodex: P2 fina
- l + teaser assets
+SUMMARY:Launch plan — Hard date
+DESCRIPTION:What the market sees: ★ P1 snippet wave 1 — LinkedIn 9:00 +
+  Facebook\; first stat card from P1.\nWhat the market sees: ★ Audit-offe
+ r email #1 — 9:30\, from W2SA\, signed by Sean\, to the warm list.\nSean
+  (T0): Approve the email send (10m) — One last read\; send\, or release 
+ the 1:1 drafts.\nClaude: Send + watch delivery — Bounces under 2%\, comp
+ laints near zero\, unsubscribes honored\; log results in the scorecard.\nC
+ odex: P2 publish prep — LV page\, metadata\, PDF\, CTA block to the free
+  check.\nDone when: Email channel proven
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261021-5@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261021@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261021
 DTEND;VALUE=DATE:20261022
-SUMMARY:Sprint — Wed
-DESCRIPTION:Public: P2 teaser | P1 snippet\nSean: 9:00 post (10m)\nClaude: 
- P2 page CTA + UTM check\nCodex: P3 QA checks
+SUMMARY:Launch plan — P2 teaser + P1 snippet
+DESCRIPTION:What the market sees: P2 teaser + P1 snippet — Teaser: one su
+ rprising P2 finding + "publishing Thursday".\nSean (T0): 9:00 post (10m) 
+ — Post\; reply to comments.\nSean (T0): P3 line edits (30m) — Final re
+ ad of the revised draft.\nClaude: P2 page CTA + UTM check — CTA to the f
+ ree Health Check\, tagged with the P2 campaign.\nCodex: P3 final — Apply
+  line edits\; P3 is ready for its Nov 5 launch.\nDone when: P3 done — tw
+ o weeks ahead of launch
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261022-6@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261022@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
-SUMMARY:Sprint — Thu
-DESCRIPTION:Public: P2 publish + breakdown (was 10/27)\nSean: Publish appro
- val (15m)\nClaude: Mobile check of P2 page\nCodex: Publish P2 to LV
+SUMMARY:Launch plan — P2 publish + breakdown
+DESCRIPTION:What the market sees: ★ P2 publish + breakdown — LinkedIn\,
+  LV page\, Facebook (was Oct 27).\nSean (T0): Publish approval (15m) — F
+ inal look at the live page\, then post the breakdown.\nClaude: Phone check
+  of the P2 page — iPhone + Android + the LinkedIn in-app browser.\nCodex
+ : Publish P2 to LV — Go live at 8:45 so the 9:00 post links to a live pa
+ ge.\nDone when: P2 live 5 days early
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261023-7@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261023@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261024
-SUMMARY:Sprint — Fri
-DESCRIPTION:Public: P1 snippet\nSean: Review P3 (30m) | Week recap (10m)\nC
- laude: Queue next week\nCodex: P3 revisions
+SUMMARY:Launch plan — P1 snippet
+DESCRIPTION:What the market sees: P1 snippet — Second P1 stat card\; link
+  to the free check.\nSean (T0): Week recap (10m) — What got clicks\, wha
+ t to repeat\, what to drop.\nClaude: Queue Week 2 — P2 snippet wave + ca
+ rousel\, evergreen recycle\, proof post.\nClaude: Render P2 cards + carous
+ el — Snippet cards 1–3 and a 6–10 slide carousel.\nCodex: P2 social 
+ pack polish — Snippet lines and the carousel outline.\nDone when: Week 2
+  queued
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261026-8@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261026@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261027
-SUMMARY:Scorecard · P2 snippet wave
-DESCRIPTION:Social
+SUMMARY:Launch plan — P2 snippet #1
+DESCRIPTION:What the market sees: P2 snippet #1 — LinkedIn + Facebook\; s
+ tat card → full report + free check.\nSean (T0): Scorecard (15m) — Com
+ pare with last week\; one change.\nSean (T0): Approve the week's queue (15
+ m) — Veto anything off.\nClaude: Scorecard pre-fill — Numbers in befor
+ e Sean's review.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261027-9@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261027@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261027
 DTEND;VALUE=DATE:20261028
-SUMMARY:P2 carousel
-DESCRIPTION:Social
+SUMMARY:Launch plan — P2 carousel
+DESCRIPTION:What the market sees: P2 carousel — LinkedIn document post\, 
+ 6–10 slides\; LV page reposts.\nSean (T0): Reply to comments (10m) — S
+ ame-day replies drive reach.\nClaude: Draft email #2 — P2 findings + the
+  free Health Check\; for Tue Nov 3.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261102-10@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261028@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:Launch plan — P2 snippet #2
+DESCRIPTION:What the market sees: P2 snippet #2 — Second P2 stat card.\nS
+ ean (T0): Review email #2 draft (15m) — Subject line + first two lines m
+ atter most.\nCodex: P3 publish prep — LV page\, metadata\, PDF\, CTA blo
+ ck.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261029@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:Launch plan — Evergreen recycle
+DESCRIPTION:What the market sees: Evergreen recycle — Best "keep" paper f
+ rom the 20-paper library → snippet + link.\nCodex: P3 social pack — Te
+ aser\, breakdown\, 6–8 snippet lines\, carousel outline.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261030@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Launch plan — W2SA proof post #2
+DESCRIPTION:What the market sees: W2SA proof post #2 — "Not showing in lo
+ cal search" → free check.\nSean (T0): Approve P3 teaser + breakdown copy
+  (20m) — So launch week runs on autopilot.\nClaude: Queue Week 3 — P3 
+ teaser + launch\, email #2\, proof post.\nDone when: P2 wave shipped · em
+ ail #2 approved · Week 3 queued
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261102@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
-SUMMARY:Scorecard
-DESCRIPTION:Tracking
+SUMMARY:Launch plan — W2SA proof post #3
+DESCRIPTION:What the market sees: W2SA proof post #3 — "Primary action bu
+ ried below the first screen" → free check.\nSean (T0): Scorecard (15m) 
+ — Watch Health Check requests and bookings.\nSean (T0): Approve the week
+ 's queue (15m) — P3 teaser\, email #2\, launch-day posts\; veto anything
+  off.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261103-11@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261103@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261104
-SUMMARY:P3 teaser · Email #2
-DESCRIPTION:Email
+SUMMARY:Launch plan — P3 teaser
+DESCRIPTION:What the market sees: P3 teaser — One surprising P3 finding +
+  "publishing Thursday".\nWhat the market sees: ★ Email #2 — P2 finding
+ s + free Health Check\, 9:30.\nSean (T0): Approve the send (10m) — Final
+  read of email #2\; send at 9:30.\nClaude: Send + watch delivery — Bounc
+ es\, complaints\, unsubscribes\; log in the scorecard.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261105-12@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261104@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:Launch plan — P2 snippet #3
+DESCRIPTION:What the market sees: P2 snippet #3 — Third P2 stat card.\nCo
+ dex: Stage P3 on LV — Ready to go live Thursday at 8:45.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261105@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
-SUMMARY:P3 publish + breakdown
-DESCRIPTION:Papers
+SUMMARY:Launch plan — P3 publish + breakdown
+DESCRIPTION:What the market sees: ★ P3 publish + breakdown — LinkedIn\,
+  LV page\, Facebook.\nSean (T0): Publish approval (15m) — Final look\, t
+ hen post the breakdown.\nClaude: Phone check of the P3 page — iPhone + A
+ ndroid + LinkedIn in-app.\nCodex: Publish P3 to LV — 8:45 go-live.\nDone
+  when: P3 live
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261109-13@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261106@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:Launch plan — P3 snippet #1
+DESCRIPTION:What the market sees: P3 snippet #1 — First P3 stat card.\nSe
+ an (T0): Week recap (10m) — Launch-week numbers: P3 clicks\, Health Chec
+ ks\, bookings.\nClaude: Render P3 cards + carousel — Snippet cards 2–4
+  and the 6–10 slide carousel for Week 4.\nClaude: Queue Week 4 — P3 wa
+ ve + carousel\, P1 recycle\, proof post.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261109@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261110
-SUMMARY:Scorecard · P3 snippet wave
-DESCRIPTION:Social
+SUMMARY:Launch plan — P3 snippet #2
+DESCRIPTION:What the market sees: P3 snippet #2 — Second P3 stat card →
+  full report + free check.\nSean (T0): Scorecard (15m) — First full week
+  of P3 data\; note the best post.\nSean (T0): Approve the week's queue (15
+ m) — P3 wave\, carousel\, P1 recycle\, proof post.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261110-14@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261110@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
-SUMMARY:P3 carousel
-DESCRIPTION:Social
+SUMMARY:Launch plan — P3 carousel
+DESCRIPTION:What the market sees: P3 carousel — LinkedIn document post\; 
+ LV page reposts.\nClaude: Draft email #3 — Mid-quarter push: best findin
+ g across P1–P3 + free check.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261116-15@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261111@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:Launch plan — P3 snippet #3
+DESCRIPTION:What the market sees: P3 snippet #3 — Third P3 stat card.\nSe
+ an (T0): Review email #3 draft (15m) — Subject line + opening\; it goes 
+ to the whole list.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261112@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:Launch plan — P1 best-performer recycle
+DESCRIPTION:What the market sees: P1 best-performer recycle — Top P1 snip
+ pet from the scorecard\, with a new hook.\nCodex: Prep evergreen paper #2 
+ — From the keep list: refresh stats\, check links\, pull 3 snippet lines
+ .
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261113@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Launch plan — W2SA proof post #4
+DESCRIPTION:What the market sees: W2SA proof post #4 — "Website is slow" 
+ → what it costs → free check.\nSean (T0): Week recap (10m) — Which P
+ 3 post drove the most clicks?\nClaude: Queue Week 5 — Email #3\, recycle
+ \, proof post\; prep the monthly review numbers.\nDone when: P3 wave shipp
+ ed · email #3 approved
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261116@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
-SUMMARY:Scorecard · Monthly review
-DESCRIPTION:Tracking
+SUMMARY:Launch plan — W2SA proof post #5
+DESCRIPTION:What the market sees: W2SA proof post #5 — "Visitors but no c
+ alls" → what's usually wrong → free check.\nSean (T0): Monthly review 
+ (45m) — Four scorecards: keep/kill channels\, decide on X and Instagram\
+ , adjust the post mix.\nClaude: Monthly numbers pack — Visits\, Health C
+ hecks\, bookings\, revenue by source.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261117-16@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261117@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
-SUMMARY:Email #3 — mid-quarter push (new)
-DESCRIPTION:Email
+SUMMARY:Launch plan — Email #3 — mid-quarter push
+DESCRIPTION:What the market sees: ★ Email #3 — mid-quarter push — Bes
+ t finding across P1–P3 + free check\, 9:30.\nSean (T0): Approve the send
+  (10m) — Final read of email #3\; send at 9:30.\nClaude: Send + watch de
+ livery — Bounces under 2%\, complaints near zero\; log in the scorecard.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261123-17@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261118@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:Launch plan — Best P2/P3 snippet
+DESCRIPTION:What the market sees: Best P2/P3 snippet — Re-run the top per
+ former with a new hook.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261119@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:Launch plan — Evergreen recycle
+DESCRIPTION:What the market sees: Evergreen recycle — Second "keep" paper
+  from the library.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261120@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Launch plan — P2 snippet #4
+DESCRIPTION:What the market sees: P2 snippet #4 — A P2 stat that hasn't r
+ un yet.\nSean (T0): Approve the Thanksgiving-week queue (15m) — 3 schedu
+ led posts\; nothing needs you next week.\nClaude: Pre-schedule Thanksgivin
+ g week — 2–3 posts only\; nobody works the holiday.\nDone when: Email 
+ #3 sent · Thanksgiving week queued
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261123@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261123
 DTEND;VALUE=DATE:20261124
-SUMMARY:Scorecard · light week
-DESCRIPTION:Tracking
+SUMMARY:Launch plan — P3 snippet #4 (scheduled)
+DESCRIPTION:What the market sees: P3 snippet #4 (scheduled) — Goes out au
+ tomatically.\nSean (T0): Scorecard (15m) — Quick look only\; holiday wee
+ k.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261130-18@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261124@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:Launch plan — W2SA proof post (scheduled)
+DESCRIPTION:What the market sees: W2SA proof post (scheduled) — Holiday s
+ hoppers look you up on their phones — does your site work there?
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261127@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Launch plan — Small Business Saturday tie-in (optional\, schedule
+ d)
+DESCRIPTION:What the market sees: Small Business Saturday tie-in (optional\
+ , scheduled) — "Shoppers will look you up tomorrow" → free Health Chec
+ k.\nClaude: Holiday check-in — Confirm scheduled posts went out\; nothin
+ g else.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261130@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:Scorecard · snippet wave 2 (P2/P3)
-DESCRIPTION:Social
+SUMMARY:Launch plan — P2 snippet wave 2 #1
+DESCRIPTION:What the market sees: P2 snippet wave 2 #1 — Top P2 stat with
+  a new hook.\nSean (T0): Scorecard (15m) — Back from the holiday: compar
+ e with the week of Nov 16.\nSean (T0): Approve the week's queue (15m) — 
+ Wave 2 posts\, email #4\, proof post.\nClaude: Render wave-2 cards — New
+  hooks on the top P2 and P3 stats from the scorecard.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261201-19@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261201@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
-SUMMARY:Email #4
-DESCRIPTION:Email
+SUMMARY:Launch plan — Email #4
+DESCRIPTION:What the market sees: ★ Email #4 — P3 findings + free check
+ \, 9:30.\nSean (T0): Approve the send (10m) — Final read of email #4\; s
+ end at 9:30.\nClaude: Send + watch delivery — Bounces\, complaints\, uns
+ ubscribes\; log in the scorecard.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261207-20@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261202@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Launch plan — P3 snippet wave 2 #1
+DESCRIPTION:What the market sees: P3 snippet wave 2 #1 — Top P3 stat with
+  a new hook.\nCodex: Pull 15 takeaways — One line each from P1–P3 for 
+ the recap carousel.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261203@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+SUMMARY:Launch plan — Evergreen recycle
+DESCRIPTION:What the market sees: Evergreen recycle — Third "keep" paper 
+ from the library.\nClaude: Draft the recap carousel — "3 papers\, 15 tak
+ eaways"\, 10–12 slides.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261204@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Launch plan — W2SA proof post #6
+DESCRIPTION:What the market sees: W2SA proof post #6 — "Website looks out
+ dated" — when a refresh is enough → free check.\nSean (T0): Review rec
+ ap carousel + Dec 10 email (30m) — Both go out next week\; approve or ma
+ rk changes.\nClaude: Draft the Dec 10 email — Year-end "Is your website 
+ ready for 2027?" offer.\nDone when: Email #4 sent · year-end assets draft
+ ed
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261207@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261207
 DTEND;VALUE=DATE:20261208
-SUMMARY:Scorecard
-DESCRIPTION:Tracking
+SUMMARY:Launch plan — W2SA proof post #7
+DESCRIPTION:What the market sees: W2SA proof post #7 — "I'm not sure what
+ 's wrong" → the free check finds it.\nSean (T0): Scorecard (15m) — Las
+ t full week before the push.\nSean (T0): Approve the week's queue (15m) 
+ — Recap carousel\, Dec 10 email\, snippets.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261208-21@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261208@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
-SUMMARY:Recap carousel: 3 papers\, 15 takeaways
-DESCRIPTION:Social
+SUMMARY:Launch plan — Recap carousel
+DESCRIPTION:What the market sees: Recap carousel — "3 papers\, 15 takeawa
+ ys"\; LV + W2SA pages repost.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261210-22@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261209@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+SUMMARY:Launch plan — P1 snippet
+DESCRIPTION:What the market sees: P1 snippet — Hook: "2027 is three weeks
+  away."
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261210@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
-SUMMARY:Email #5 — Dec 10 push (kept)
-DESCRIPTION:Email
+SUMMARY:Launch plan — Email #5 — Dec 10 push
+DESCRIPTION:What the market sees: ★ Email #5 — Dec 10 push — Year-end
+  readiness offer\, 9:30\; LinkedIn post echoes it.\nSean (T0): Approve the
+  send (10m) — Final read of the Dec 10 email\; send at 9:30.\nClaude: Se
+ nd + watch delivery — Biggest send of the quarter: watch bounces and rep
+ lies.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261214-23@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261211@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Launch plan — Best-of snippet
+DESCRIPTION:What the market sees: Best-of snippet — The quarter's top-per
+ forming stat\, re-run.\nSean (T0): Week recap (10m) — Dec 10 results: op
+ ens\, clicks\, Health Checks.\nClaude: Q4 numbers pack — Every scorecard
+ \, revenue by source\, cost of each channel.\nDone when: Dec 10 push sent
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261214@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261214
 DTEND;VALUE=DATE:20261215
-SUMMARY:Scorecard
-DESCRIPTION:Tracking
+SUMMARY:Launch plan — P3 snippet
+DESCRIPTION:What the market sees: P3 snippet — A P3 stat that hasn't run 
+ yet.\nSean (T0): Final Q4 scorecard (15m) — Fill in the last week\; flag
+  3 numbers for the retro.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:launch-20261217-24@items-needed
-DTSTAMP:20261014T193803Z
+UID:launch-plan-20261215@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:Launch plan — "What we learned from 3 papers"
+DESCRIPTION:What the market sees: "What we learned from 3 papers" — Sean'
+ s own takeaways post.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261216@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261217
+SUMMARY:Launch plan — Retro pack
+DESCRIPTION:Claude: Retro pack — What drove Health Checks\, bookings and 
+ revenue\; what didn't.\nCodex: Q1 paper shortlist — 3 topic options with
+  sources\, for the retro.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261217@items-needed
+DTSTAMP:20261014T202332Z
 DTSTART;VALUE=DATE:20261217
 DTEND;VALUE=DATE:20261218
-SUMMARY:Q4 wrap · retro · Q1 plan
-DESCRIPTION:Gate / milestone
+SUMMARY:Launch plan — Q4 retro + Q1 plan
+DESCRIPTION:Sean (T0): Q4 retro + Q1 plan (60m) — 60 min: keep / stop / s
+ tart\; set the Q1 paper and email calendar.\nDone when: ★ Q4 wrap · ret
+ ro · Q1 plan
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:launch-plan-20261218@items-needed
+DTSTAMP:20261014T202332Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:Launch plan — Last post of 2026
+DESCRIPTION:What the market sees: Last post of 2026 — Thank-you + the sin
+ gle most useful finding.
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR

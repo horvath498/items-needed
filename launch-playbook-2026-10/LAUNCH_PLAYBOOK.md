@@ -12,7 +12,8 @@
 - **Why it can go faster than two weeks:**
   - Most open items are decisions, settings, and small fixes. Very little is real building.
   - Three lanes run in parallel: Sean, Claude, and Codex.
-  - Sean's time is the only real limit, so his work is grouped into two short windows a day (~4 h total over 3 days).
+  - Sean's time is the only real limit, so his work is grouped into two short windows a day (~3.7 h Wed–Fri).
+  - **Sat Oct 17 and Sun Oct 18 are work days** (~3 h of Sean's time). They're used to get ahead: P3 drafted, Facebook live, all of Week 1 queued.
   - Every decision has a recommended default. That way a slow answer doesn't stall the work.
 - **The only long wait is Mailgun DNS verification** (it can take up to 48 h). So the DNS records go in **today**. There's also a fallback that needs no DNS at all (§7.3).
 - **Don't wait on the social-post generator fix.** Claude writes the P1 posts by hand today. Codex fixes the generator in parallel, in time for P2.
@@ -29,7 +30,9 @@
 | Audit-offer email can go out | This week | **Fri Oct 16** (1:1 fallback today) | 1–3 days |
 | All 5 "launched" criteria green | ~Oct 26 | **Fri Oct 16** | ~10 days |
 | P3 research (2 sourced facts) | Before Oct 23 | **Fri Oct 16** | 1 week |
-| P3 creation | Oct 23 | **Mon Oct 19** | 4 days |
+| P3 creation | Oct 23 | **Sat Oct 17** | 6 days |
+| P3 finished (ready for its Nov 5 launch) | Not set | **Wed Oct 21** | 2 weeks of buffer |
+| Second social channel (Facebook) | Not planned | **Sat Oct 17** | New |
 | P2 publish | Oct 27 | **Thu Oct 22** | 5 days |
 | First audit-offer email to a list | Blocked (no email channel) | **Tue Oct 20** | Unblocked |
 | P1 snippet wave 1 (hard date) | Oct 20 | **Oct 20, kept**, queued by Fri | On time, no scramble |
@@ -64,13 +67,13 @@ From the live sites, the money path is:
 | # | Decision | Recommended default | Why | Unblocks |
 |---|---|---|---|---|
 | D1 | W2SA revenue visibility | **Option B**: DBR's dashboard reads W2SA's Stripe account through a read-only restricted key | Doesn't touch the live checkout while we drive traffic. Takes hours, not days. Easy to undo. Option A can come later if it's still needed. | Gate 2 |
-| D2 | Social channels & posting | **LinkedIn now**: Sean's personal profile is the main voice, the LV and W2SA company pages repost. **Facebook (W2SA page) in week 2.** X and Instagram wait. Post by hand in week 1, then use LinkedIn's built-in scheduler (or one tool such as Buffer or Postiz once there's more than one channel). | The paper → LinkedIn rhythm is already the plan. Personal profiles usually reach far more people than company pages. Small-business owners are heavy Facebook users. | Gate 3, the whole social lane |
+| D2 | Social channels & posting | **LinkedIn now**: Sean's personal profile is the main voice, the LV and W2SA company pages repost. **Facebook (W2SA page) from Sat Oct 17.** X and Instagram wait. Post by hand Thu–Fri, then queue each week in LinkedIn's built-in scheduler (or one tool such as Buffer or Postiz to cover both channels). | The paper → LinkedIn rhythm is already the plan. Personal profiles usually reach far more people than company pages. Small-business owners are heavy Facebook users. | Gate 3, the whole social lane |
 | D3 | Set up Mailgun now? | **Yes, today.** Send from a subdomain such as `mg.w2sa.online`. | Your condition for restarting it is met. The DNS wait is the longest item in the plan. | Gate 4 |
 | D4 | Full Build Factory | **Commit and push P1–P3 today. Commit a tested P4 checkpoint by Fri Oct 16. Then pause** (unless Billy's is a paying job — Sean confirms). | Protects work that only exists locally right now. Frees up Codex. | Codex lane |
 | D5 | Freeze | **Confirm the freeze:** LUVK, NCC remediation, Amatrix/HRC/HAWL, new Nexus agent work | Rule: if it doesn't get a post out, convert a visitor, or make revenue visible, it waits. | Focus |
 | D6 | Which brand sends the email | **W2SA**, signed by Sean. The LV paper is the hook. | The audit offer is a W2SA product, and its buyers are small businesses. | Email copy |
 | D7 | Dormant projects | **Archive** SITREP Intelligence, Knowledge Engine, and the WP_Distribution video build (manual posting replaces it). **Keep** the HAWL/Amatrix/HRC playbooks as frozen documents. | Clears noise. Nothing is lost. | Can wait until Fri |
-| D8 | Post approval rule | **Sean approves the first 3 posts. After that, posts built from approved templates go out unless Sean vetoes them in the queue.** | Keeps Sean from becoming the bottleneck from week 2 on. | Steady-state cadence |
+| D8 | Post approval rule | **Sean approves the first 3 posts. After that, posts built from approved templates go out unless Sean vetoes them in the queue.** | Keeps Sean from becoming the bottleneck once the cadence is running. | Steady-state cadence |
 
 ---
 
@@ -92,7 +95,7 @@ From the live sites, the money path is:
   - **9:00–9:30**: approve and post.
   - **16:00–16:30**: review and decide.
   - Everything else comes to Sean as a short async item with a recommended answer.
-- **Manual first, automate second.** Post natively for week 1. Turn on scheduling in week 2.
+- **Manual first, automate second.** Post natively Thu–Fri. From Week 1 on, the week's posts are queued in advance: Sun Oct 18 for Week 1, then every Friday.
 - **Protect work:** all uncommitted work gets committed and pushed today: WP Factory, LV, and Full Build Factory P1–P4.
 
 ---
@@ -134,7 +137,6 @@ From the live sites, the money path is:
   - [ ] Open the W2SA phone hotfix PR: skip the intro on phones and make the skip button bigger (§7.2).
   - [ ] Build the UTM link sheet (§7.6). Confirm analytics records UTM-tagged visits on both sites.
   - [ ] Check that the P1 page has a clear CTA to the W2SA Digital Health Check, with UTM tags.
-  - [ ] Check the client portal's public address. Confirm with Codex that the LV deploy freeze is lifted, and note it in the LV sitrep.
 - **Codex**
   - [ ] Confirm P2 generated at 09:00 ET and run its quality checks. Flag it for Sean's review.
   - [ ] Commit and push all uncommitted work: WP Factory, LV, and Full Build Factory P1–P4 branches.
@@ -149,11 +151,10 @@ From the live sites, the money path is:
   - [ ] Real-phone test after the hotfix ships (checklist in §7.2). 15 min.
   - [ ] **16:00** Review P2. 30 min.
 - **Claude**
-  - [ ] Ship the phone hotfix. Then make a mobile cut of the intro: portrait, ≤1.5 MB, with a poster image.
+  - [ ] Ship the phone hotfix and re-test on phones. (The mobile cut of the intro moves to Sat.)
   - [ ] Build the Option B billing view (§7.4).
   - [ ] Mailgun wiring: audit-offer email template, unsubscribe handling, and an opt-in on the P1 page and the Health Check form (§7.3).
   - [ ] Snippet-card template, rendered from code (4:5, 1080×1350). No Canva time needed from Sean.
-  - [ ] Product-lookup fix: compare brand keys in lowercase, and add one test.
 - **Codex**
   - [ ] Land the social-generator fix plus a guard test (§7.5). Regenerate the P1 social pack and compare it with Claude's hand-written version.
   - [ ] Draft the P3 facts with sources.
@@ -177,34 +178,65 @@ From the live sites, the money path is:
   - [ ] Full Build Factory committed and tested → **pause**.
 - **Done when:** all 5 gate criteria are green (§10).
 
-### Weekend — Oct 17–18
+### Day 3 — Sat Oct 17: get ahead
 
-- Nothing scheduled. The queue holds. LinkedIn engagement is low on weekends anyway.
+- LinkedIn stays quiet (weekend reach is low). The weekend is for building the buffer.
+- **Sean (~1.75 h)**
+  - [ ] Set up the Facebook W2SA page: cover image, About text from w2sa.online, and a button to the free Health Check (`utm_source=facebook`). 30 min.
+  - [ ] Warm-contact list: pick 20–30 people from the DBR CRM and your inbox for email #1. Mark who should get a 1:1 note instead. 30 min.
+  - [ ] Paper scoring checks and keep/archive for the 20 older papers (pulled forward from the week of Oct 26). 45 min.
+- **Claude**
+  - [ ] Mobile cut of the W2SA intro: portrait, 720p H.264, ≤1.5 MB, with a poster frame (moved from Thu).
+  - [ ] Product-lookup fix: compare brand keys in lowercase, plus one test (moved from Thu).
+  - [ ] Render P1 snippet cards 4–8 and the P2 teaser card, so Week 1 has all its graphics.
+  - [ ] Phone pass on lucentveritas.com and the P1 page (same checks as W2SA).
+- **Codex**
+  - [ ] **P3 creation** with the confirmed facts (was Oct 23).
+  - [ ] P2 final copy, teaser excerpt, and 3 pull-quotes (was Tue Oct 20).
+- **Done when:** P3 is drafted, P2 is final, the Facebook page is live, and Week 1's cards are ready.
+
+### Day 4 — Sun Oct 18: queue the week
+
+- **Sean (~1.3 h)**
+  - [ ] Tunnel-token rotation with Claude, in Sunday's low-traffic window (§7.7). 30 min.
+  - [ ] Approve the whole Week 1 queue: every post Mon–Fri plus Tuesday's email. 20 min.
+  - [ ] First-pass P3 review: big-picture notes only. Line edits come Wed. 30 min.
+  - Public: the first Facebook post on the W2SA page ("A website can look fine and still lose customers…").
+- **Claude**
+  - [ ] Queue Week 1 in LinkedIn's scheduler: Mon proof post, Tue snippet wave 1, Wed teaser + snippet, Thu P2 launch, Fri snippet.
+  - [ ] Schedule email #1 for Tue 9:30 (or put 1:1 drafts in Sean's inbox if Mailgun isn't verified).
+  - [ ] Pre-fill the scorecard with Fri–Sun numbers so Monday's review takes 15 minutes.
+  - [ ] Check the client portal's public address. Confirm with Codex that the LV deploy freeze is lifted, and note it in the LV sitrep (moved from Wed).
+- **Codex**
+  - [ ] Run the quality checks on P3 (was Wed Oct 21). Apply Sean's first-pass notes.
+- **Done when:** Week 1 is fully queued, the tunnel token is rotated, and P3 has had its first review.
 
 ---
 
 ## 6. Week 1 (Oct 19–23): run the cadence
 
+- The whole week was queued and approved on Sunday, so Sean's time drops to ~1.5 h.
 - **Mon Oct 19**
-  - Scorecard #1 (Sean, 15 min). Approve the week's post queue (15 min).
-  - Public: **W2SA proof post**, a finding from the sample report (e.g., "contact form fails on mobile").
-  - Claude: rotate the tunnel token at **08:00** with an LV uptime check (§7.7). Set up the Facebook W2SA page (channel 2).
-  - Codex: **P3 creation** (was Oct 23).
+  - Scorecard #1 (Sean, 15 min).
+  - Public: **W2SA proof post** on LinkedIn and Facebook, a finding from the sample report (e.g., "contact form fails on mobile").
+  - Claude: fix anything the scorecard flags.
+  - Codex: finish the P3 revisions from Sunday's notes.
 - **Tue Oct 20 — hard date**
   - Public: **★ P1 snippet wave 1** and **audit-offer email #1**.
   - Sean approves the send (10 min). Claude sends it and watches bounces and unsubscribes.
-  - Codex: final P2 and teaser assets.
+  - Codex: P2 publish prep (LV page, metadata, PDF, CTA block).
 - **Wed Oct 21**
   - Public: **P2 teaser** and a P1 snippet.
+  - Sean: P3 line edits (30 min).
   - Claude: check the P2 page CTA and UTM tags.
-  - Codex: P3 QA checks.
+  - Codex: **P3 final**, two weeks ahead of its Nov 5 launch.
 - **Thu Oct 22**
   - Public: **P2 publish + breakdown post** (was Oct 27).
   - Claude: phone check of the P2 page.
 - **Fri Oct 23**
   - Public: a P1 snippet.
-  - Sean reviews P3 (30 min) and does a 10-min week recap.
-  - Codex: P3 revisions.
+  - Sean: 10-min week recap.
+  - Claude: queue Week 2 and render the P2 cards and carousel.
 
 ---
 
@@ -214,7 +246,7 @@ From the live sites, the money path is:
 
 - **Channels (D2 default):**
   - LinkedIn: Sean's personal profile is the main voice. The LV and W2SA company pages repost.
-  - Facebook: W2SA page from week 2.
+  - Facebook: W2SA page live Sat Oct 17, first post Sun Oct 18.
   - X and Instagram: parked until the scorecard shows LinkedIn working.
 - **Post types:**
   - **Announcement/breakdown**: hook, 3 findings, the "so what," then a CTA. 150–250 words.
@@ -229,7 +261,7 @@ From the live sites, the money path is:
   - Post from Sean's profile at 9:00 ET on weekdays.
   - Repost from the company page within an hour.
   - Reply to every comment the same day.
-- **Week 2:** schedule the week's posts on Monday in LinkedIn's built-in scheduler. Move to one scheduling tool once Facebook is added.
+- **From Week 1:** the week's posts are queued ahead in LinkedIn's built-in scheduler (Sun Oct 18 for Week 1, then each Friday) and Sean approves the queue. If posting to two channels gets tedious, move to one scheduling tool.
 - **Graphics:**
   - Claude renders snippet cards and carousels from one code template, so they stay on-brand at no extra cost.
   - Canva stays available for one-off edits.
@@ -257,7 +289,7 @@ From the live sites, the money path is:
 - **Real-phone test checklist (Sean, 15 min):**
   - [ ] iPhone Safari and Android Chrome.
   - [ ] **LinkedIn in-app browser**: tap your own post's link. Social clicks open here, not in Safari or Chrome.
-  - [ ] Facebook in-app browser (week 2).
+  - [ ] Facebook in-app browser (from Sun Oct 18).
   - [ ] First screen appears in under 3 s on cellular with Wi-Fi off.
   - [ ] Tap "Review My Site," submit the Digital Health Check, and confirm the lead shows up in the DBR CRM.
   - [ ] Open the Dossier checkout and confirm the Stripe page loads (no purchase needed).
@@ -302,10 +334,10 @@ From the live sites, the money path is:
   - **Add a guard test so the bug can't come back.** It fails if the output is shorter than ~300 characters, matches the slug, or is missing the hook, the 3 points, or the CTA link.
 - **P3:**
   - Codex finds the two facts by Thu. Sean confirms Fri.
-  - **Creation moves to Mon Oct 19.** If the schedule is automated and can't move, keep Oct 23 — the point is that P3 is no longer blocked.
-  - Review Fri Oct 23. Teaser Tue Nov 3. **Publish Thu Nov 5 (proposed).**
+  - **Creation moves to Sat Oct 17.** If the schedule is automated and can't move, run it by hand — the point is that P3 is no longer blocked.
+  - QA and Sean's first-pass review Sun Oct 18. Line edits and **P3 final Wed Oct 21**. Teaser Tue Nov 3. **Publish Thu Nov 5 (proposed).**
 - **Human scoring checks and old-paper keep/archive decisions:**
-  - Batch them into one 45-min session in the week of Oct 26.
+  - One 45-min session on Sat Oct 17 (pulled forward from the week of Oct 26).
   - Kept papers become the **evergreen recycle** library for Thursday slots.
 
 ### 7.6 Tracking & the weekly scorecard
@@ -344,7 +376,7 @@ From the live sites, the money path is:
   3. [ ] Change `white_papers\deploy_n8n_workflows.py` to read the key from an environment variable. Delete line 21's literal key. Commit.
   4. [ ] **Revoke the old key**, then re-run one workflow. *Deleting the key from the file doesn't remove it from git history. Revoking it is what closes the exposure.*
   5. [ ] Replace the Stripe test key in LV's `.env.example` with a placeholder (`sk_test_xxx`).
-  6. [ ] **Mon Oct 19, 08:00:** rotate the tunnel token in `lv-tunnel-config.yml`, then check right away that lucentveritas.com still loads. Have a rollback ready. This is not a Friday-evening job, because a bad rotation takes LV offline.
+  6. [ ] **Sun Oct 18, low-traffic window:** rotate the tunnel token in `lv-tunnel-config.yml`, then check right away that lucentveritas.com still loads. Have a rollback ready. A bad rotation takes LV offline, so it goes in the quietest slot, when you're both working.
 
 ### 7.8 DBR cleanup (small, allowed)
 
@@ -374,9 +406,9 @@ From the live sites, the money path is:
 
 | Week of | Main moves |
 |---|---|
-| Oct 12 | Decisions, Mailgun DNS, P2 generated (Wed). P1 announcement (Thu). **★ Machine running**, P1 carousel, security hour (Fri). |
-| Oct 19 | Scorecard #1, P3 creation (Mon). **★ P1 snippet wave 1 + email #1 (Tue 20).** P2 teaser (Wed). **P2 publish (Thu 22).** P3 review (Fri). |
-| Oct 26 | P2 snippet wave and carousel. Evergreen recycle. Batch the scoring checks and paper keep/archive decisions. |
+| Oct 12 | Decisions, Mailgun DNS, P2 generated (Wed). P1 announcement (Thu). **★ Machine running**, P1 carousel, security hour (Fri). P3 created, Facebook live, paper keep/archive (Sat). Week 1 queued, tunnel token rotated, first Facebook post (Sun). |
+| Oct 19 | Scorecard #1 (Mon). **★ P1 snippet wave 1 + email #1 (Tue 20).** P2 teaser, P3 final (Wed). **P2 publish (Thu 22).** |
+| Oct 26 | P2 snippet wave and carousel. Evergreen recycle. Email #2 drafted. |
 | Nov 2 | P3 teaser + email #2 (Tue). **P3 publish (Thu Nov 5).** |
 | Nov 9 | P3 snippet wave and carousel. Recycle P1's best performer. |
 | Nov 16 | Monthly review. **Email #3, mid-quarter push (new, Tue Nov 17).** |
@@ -385,7 +417,8 @@ From the live sites, the money path is:
 | Dec 7 | Recap carousel: "3 papers, 15 takeaways" (Tue). **★ Email #5, Dec 10 push (kept: year-end timing suits a "2027 readiness" offer).** |
 | Dec 14 | **★ Q4 wrap, retro, Q1 plan (Thu Dec 17).** |
 
-- **Import the dates:** `calendar/launch-calendar.ics` works with Google Calendar (Settings → Import) or Apple Calendar.
+- **Print it:** `calendar/launch-calendar-print.pdf` has one week per landscape page, with a detail line and a checkbox for every item, plus a notes area.
+- **Import the dates:** `calendar/launch-calendar.ics` has one all-day event per work day, with that day's tasks in the description. It works with Google Calendar (Settings → Import) or Apple Calendar.
 
 ---
 
@@ -410,10 +443,10 @@ From the live sites, the money path is:
 | Mailgun DNS slow to verify | Not verified by Fri 12:00 | Sean sends 1:1 emails from his inbox. The bulk send moves to Tue Oct 20 as planned. |
 | Generator fix slips | Output still wrong on Thu | Keep writing posts by hand (already the Day 1 plan). The fix isn't needed until P2's pack. |
 | Phone issues bigger than expected | Real-phone test fails on Thu | The hotfix (no intro on phones) already removes the main risk. Polish can follow. |
-| Sean's time | Decisions or approvals stack up | Defaults apply at 9:00 the next day. D8 removes per-post approval from week 2. |
+| Sean's time | Decisions or approvals stack up | Defaults apply at 9:00 the next day. D8 replaces per-post approval with one weekly queue approval. |
 | Key rotation breaks n8n | A workflow fails after the switch | Don't revoke the old key until the new credential is proven (§7.7 order). |
 | Live Stripe webhook unhealthy | Failed deliveries on Day 0 | Stop and fix first, then resend the failed events from Stripe. |
-| Company pages get little reach | Low impressions in week 1 | Sean's personal profile is already the main channel. Add Facebook in week 2. |
+| Company pages get little reach | Low impressions in week 1 | Sean's personal profile is already the main channel, and Facebook is live from Oct 17. |
 | Option B double-counts | Totals don't match Stripe | Match on Stripe object IDs and reconcile weekly. |
 | P2 fails review | Big fixes needed | Use the Oct 22 slot for an evergreen paper from the 20-paper library. P2 takes the Nov 5 slot. |
 
@@ -509,6 +542,9 @@ W2SA
 - `LAUNCH_PLAYBOOK.pdf`: the same playbook as a PDF.
 - `calendar/launch-calendar.html`: the visual calendar (sprint view and Q4 view). Open it in a browser.
 - `calendar/sprint-calendar.png` and `calendar/q4-calendar.png`: the calendar as images.
-- `calendar/launch-calendar.ics`: import the milestones into Google or Apple Calendar.
+- `calendar/launch-calendar-print.pdf`: the printable calendar, one week per landscape Letter page (10 pages).
+- `calendar/launch-calendar-print.html`: the same printable calendar. It also prints from a browser (landscape, margins "None").
+- `calendar/launch-calendar.ics`: one all-day event per work day, for Google or Apple Calendar.
 - `assets/w2sa-mobile-baseline.png`: the phone-simulation screenshots.
+- `build/plan_data.py`: the day-by-day plan that every calendar file is generated from.
 - `build/`: rebuild everything with `bash build/build.sh` (needs Python 3, pandoc, Node, and Playwright).

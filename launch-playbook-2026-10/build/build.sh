@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# Rebuild the calendar (HTML, ICS, PNGs) and the PDF playbook.
+# Rebuild the calendars (HTML, printable PDF, ICS, PNGs) and the PDF playbook.
 # Run from anywhere; needs python3, pandoc, node + playwright (Chromium).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 python3 build/calendar.py
 node build/render.js calendar
+node build/render.js print
 
 # The print HTML sits next to the markdown so image paths resolve as written.
 pandoc LAUNCH_PLAYBOOK.md -f gfm -t html5 --standalone \
