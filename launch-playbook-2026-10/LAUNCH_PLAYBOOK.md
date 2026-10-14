@@ -13,11 +13,17 @@
   - Most open items are decisions, settings, and small fixes. Very little is real building.
   - Three lanes run in parallel: Sean, Claude, and Codex.
   - Sean's time is the only real limit, so his work is grouped into two short windows a day (~3.7 h Wed–Fri).
-  - **Sat Oct 17 and Sun Oct 18 are work days** (~3 h of Sean's time). They're used to get ahead: P3 drafted, Facebook live, all of Week 1 queued.
+  - **Sat Oct 17 and Sun Oct 18 are work days** (~3.3 h of Sean's time). They're used to get ahead: P3 drafted, Facebook live, all of Week 1 queued.
   - Every decision has a recommended default. That way a slow answer doesn't stall the work.
 - **The only long wait is Mailgun DNS verification** (it can take up to 48 h). So the DNS records go in **today**. There's also a fallback that needs no DNS at all (§7.3).
 - **Don't wait on the social-post generator fix.** Claude writes the P1 posts by hand today. Codex fixes the generator in parallel, in time for P2.
 - **Phones:** I ran a quick phone test of w2sa.online today. It found a concrete problem: a **6.3 MB intro video** behind a black screen. A one-hour hotfix (skip the intro on phones) clears it (§7.2).
+- **Papers build credibility; they don't bring enough people on their own.** From Week 1 the plan adds growth channels that reach people who need help now (§7.9):
+  - W2SA outreach that leads with a free mini-audit: 20 businesses a week.
+  - A Google Business Profile with reviews.
+  - Referral partners.
+  - Teardown videos and a live teardown session (Nov 18).
+  - LV LinkedIn outreach and a co-authored Q1 paper.
 - **The money path stays untouched while traffic ramps up.** For billing I recommend **Option B**: DBR only reads W2SA's Stripe account and changes nothing.
 
 ### What changes vs. the SITREP plan
@@ -62,7 +68,7 @@ From the live sites, the money path is:
 ## 2. Decisions — answer today
 
 - Reply with just the numbers you **disagree** with. Anything unanswered by **9:00 Thu Oct 15** takes the default.
-- D1–D5 keep the SITREP's order. D6–D8 are new.
+- D1–D5 keep the SITREP's order. D6–D10 are new; D9 and D10 can wait until the dates shown.
 
 | # | Decision | Recommended default | Why | Unblocks |
 |---|---|---|---|---|
@@ -74,6 +80,8 @@ From the live sites, the money path is:
 | D6 | Which brand sends the email | **W2SA**, signed by Sean. The LV paper is the hook. | The audit offer is a W2SA product, and its buyers are small businesses. | Email copy |
 | D7 | Dormant projects | **Archive** SITREP Intelligence, Knowledge Engine, and the WP_Distribution video build (manual posting replaces it). **Keep** the HAWL/Amatrix/HRC playbooks as frozen documents. | Clears noise. Nothing is lost. | Can wait until Fri |
 | D8 | Post approval rule | **Sean approves the first 3 posts. After that, posts built from approved templates go out unless Sean vetoes them in the queue.** | Keeps Sean from becoming the bottleneck once the cadence is running. | Steady-state cadence |
+| D9 | Outreach area and trades (by Mon Oct 19) | **Your home area; 2–3 trades with many weak websites** (e.g., contractors, salons, dental offices) | Focused lists make the notes specific and let word of mouth build in one place. | Outreach (§7.9) |
+| D10 | Referral terms (by Fri Oct 23) | **A free Health Check for partners' clients. Decide on a thank-you fee after the first 5 referrals.** | Easy yes for partners; no money promised before it's proven. | Partner one-pager |
 
 ---
 
@@ -88,6 +96,7 @@ From the live sites, the money path is:
   - Snippet-card template.
   - Social-generator fix.
   - Product-lookup letter-case fix.
+  - Growth channels (§7.9): outreach lists and drafts, Google Business Profile, partner one-pager, teardown session kit, LV sample pack.
 - **NCC alert noise:** it has reported 2 critical issues every 48 h for 7 weeks.
   - Spend 10 minutes confirming neither issue touches a live system (DBR, W2SA, LV).
   - If neither does, mute the alert until NCC is unfrozen.
@@ -102,7 +111,7 @@ From the live sites, the money path is:
 
 ## 4. Lanes & owners
 
-- **Sean (T0)**: decisions, account access, DNS records, Stripe dashboard checks, Anthropic key rotation, real-phone tests, approving and posting.
+- **Sean (T0)**: decisions, account access, DNS records, Stripe dashboard checks, Anthropic key rotation, real-phone tests, approving and posting, sending outreach, partner calls, the live teardown.
 - **Claude**:
   - W2SA phone fixes.
   - Option B billing view.
@@ -111,6 +120,7 @@ From the live sites, the money path is:
   - UTM links, analytics, and scorecard.
   - Security cleanup in code.
   - DBR small fixes.
+  - Outreach lists, mini-audits and drafts; Google Business Profile content; partner one-pager; teardown video scripts and screen captures.
 - **Codex**:
   - P2 check and QA.
   - Social-generator fix with a guard test.
@@ -118,6 +128,7 @@ From the live sites, the money path is:
   - P3 research and creation.
   - Commit and push all WIP.
   - Full Build Factory checkpoint, then pause.
+  - LV co-author shortlist (Nov).
 
 ---
 
@@ -181,10 +192,11 @@ From the live sites, the money path is:
 ### Day 3 — Sat Oct 17: get ahead
 
 - LinkedIn stays quiet (weekend reach is low). The weekend is for building the buffer.
-- **Sean (~1.75 h)**
+- **Sean (~2 h)**
   - [ ] Set up the Facebook W2SA page: cover image, About text from w2sa.online, and a button to the free Health Check (`utm_source=facebook`). 30 min.
   - [ ] Warm-contact list: pick 20–30 people from the DBR CRM and your inbox for email #1. Mark who should get a 1:1 note instead. 30 min.
   - [ ] Paper scoring checks and keep/archive for the 20 older papers (pulled forward from the week of Oct 26). 45 min.
+  - [ ] Claim W2SA's Google Business Profile and start verification; it can take days (§7.9 B). 15 min.
 - **Claude**
   - [ ] Mobile cut of the W2SA intro: portrait, 720p H.264, ≤1.5 MB, with a poster frame (moved from Thu).
   - [ ] Product-lookup fix: compare brand keys in lowercase, plus one test (moved from Thu).
@@ -215,28 +227,30 @@ From the live sites, the money path is:
 
 ## 6. Week 1 (Oct 19–23): run the cadence
 
-- The whole week was queued and approved on Sunday, so Sean's time drops to ~1.5 h.
+- The posts were queued and approved on Sunday, so posting takes little of Sean's time. Most of his ~3 h this week goes to the new outreach (§7.9).
 - **Mon Oct 19**
-  - Scorecard #1 (Sean, 15 min).
+  - Scorecard #1 (Sean, 15 min). Pick the outreach area and trades (D9, 15 min).
   - Public: **W2SA proof post** on LinkedIn and Facebook, a finding from the sample report (e.g., "contact form fails on mobile").
-  - Claude: fix anything the scorecard flags.
+  - Claude: fix anything the scorecard flags. Build outreach list #1 (20 sites, 2–3 findings each) and the templates.
   - Codex: finish the P3 revisions from Sunday's notes.
 - **Tue Oct 20 — hard date**
   - Public: **★ P1 snippet wave 1** and **audit-offer email #1**.
   - Sean approves the send (10 min). Claude sends it and watches bounces and unsubscribes.
+  - Sean sends **outreach batch #1** (10 notes, 30 min).
   - Codex: P2 publish prep (LV page, metadata, PDF, CTA block).
 - **Wed Oct 21**
   - Public: **P2 teaser** and a P1 snippet.
   - Sean: P3 line edits (30 min).
-  - Claude: check the P2 page CTA and UTM tags.
+  - Claude: check the P2 page CTA and UTM tags. Write the Google Business Profile content.
   - Codex: **P3 final**, two weeks ahead of its Nov 5 launch.
 - **Thu Oct 22**
   - Public: **P2 publish + breakdown post** (was Oct 27).
   - Claude: phone check of the P2 page.
+  - Sean sends **outreach batch #2** and replies to anyone who answered batch #1.
 - **Fri Oct 23**
   - Public: a P1 snippet.
-  - Sean: 10-min week recap.
-  - Claude: queue Week 2 and render the P2 cards and carousel.
+  - Sean: 10-min week recap. Referral-partner list of 10 names (20 min).
+  - Claude: queue Week 2, render the P2 cards and carousel, and write the partner one-pager.
 
 ---
 
@@ -343,8 +357,8 @@ From the live sites, the money path is:
 ### 7.6 Tracking & the weekly scorecard
 
 - **UTM convention:**
-  - `utm_source` = `linkedin` | `facebook` | `email`
-  - `utm_medium` = `social` | `email`
+  - `utm_source` = `linkedin` | `facebook` | `email` | `outreach` | `gbp` | `partner` | `teardown` | `google-ads`
+  - `utm_medium` = `social` | `email` | `outreach` | `referral` | `cpc`
   - `utm_campaign` = `p1-readiness-2027` | `p2-<slug>` | `p3-<slug>` | `audit-offer`
   - `utm_content` = `announce` | `snippet-01…` | `carousel` | `proof-01…` | `email-01…`
   - Example: `https://w2sa.online/digital-health-check?utm_source=linkedin&utm_medium=social&utm_campaign=p1-readiness-2027&utm_content=announce`
@@ -362,11 +376,17 @@ From the live sites, the money path is:
 | Bookings (LV + W2SA) | Cal.com |
 | Checkouts and revenue (both Stripe accounts) | DBR (after Option B) |
 | Emails sent, opened, clicked, unsubscribed, bounced | Mailgun |
+| Outreach sent, replies, Health Checks from outreach | DBR CRM (stage "Outreach") |
+| Partner intros, calls, referrals received | DBR CRM |
+| Google Business Profile views, calls, website clicks, reviews | Google Business Profile performance |
+| LV DMs sent, calls booked | LinkedIn + Cal.com |
+| Ad spend and cost per Health Check (only if the test runs) | Google Ads |
 
 - **First-month guardrails** (adjust after the Oct 19 baseline):
   - At least 4 posts a week, shipped on schedule.
   - At least one Digital Health Check submission a week by the end of October.
   - Bounce rate under 2% and complaint rate near zero.
+  - 20 outreach notes a week, every week except Thanksgiving.
 
 ### 7.7 Security hour (Fri Oct 16, 10:00–11:00, Sean + Claude)
 
@@ -384,15 +404,103 @@ From the live sites, the money path is:
 - Client portal public address: open it and confirm the HTTP status (Day 0).
 - Two LV checkout paths: the risk is already accepted. Just confirm both show up in reporting.
 
+### 7.9 Growth channels beyond the papers
+
+- **Why:** the papers make you credible, but they mostly reach people who already follow you. These channels reach business owners who need help now, or who trust someone who can refer you. Every one passes the freeze test.
+- **Your time:** about 2–2.5 h a week on top of posting. Claude does the research, drafts, and prep; you do the sending and the conversations.
+
+**A. W2SA outreach that leads with a free mini-audit (from Tue Oct 20)**
+
+- **Weekly flow:**
+  - **Mon:** Claude builds a list of 20 local businesses with clear website problems (slow, a form that fails on phones, missing from Google Maps). It runs the same phone check used on w2sa.online and drafts a short note for each with 2–3 specific findings.
+  - **Tue and Thu:** you check 10 drafts, personalize the first line, and send them by email or LinkedIn. About 30 min each. Log every send in the DBR CRM.
+  - **Follow-ups:** at most two, about 4 and 10 days later. Then stop.
+- **Targeting (D9):** one area and 2–3 trades at a time, so notes are specific and word of mouth builds in one place.
+- **Message rules:**
+  - Lead with their findings, not with W2SA.
+  - One clear offer: the free Digital Health Check (`utm_source=outreach`).
+  - No attachments and no tracking pixels in first notes.
+- **Stay compliant and out of spam folders:**
+  - Write only to US businesses, at the business email or contact form they publish. Canada and some other countries require prior consent.
+  - Make it plain who you are and that this is an offer from your business.
+  - Include a postal address and an easy opt-out ("reply 'no thanks'"), and honor opt-outs right away (CAN-SPAM).
+  - Never buy lists.
+  - Keep volume small: 10 per batch.
+- **Templates:** Appendix C.
+
+**B. Google Business Profile and reviews (claim Sat Oct 17)**
+
+- Claim W2SA's profile as a service-area business (no public street address needed). Start verification early: Google may ask for a video or a postcard, and it can take days.
+- Claude writes the profile (Wed Oct 21): services, description, photos, and a link to the free Health Check (`utm_source=gbp`).
+- **Reviews:** from Fri Oct 30, every Health Check follow-up asks for a Google review with the direct link. Reviews are the cheapest credibility you can get.
+
+**C. Referral partners (list Fri Oct 23, intros from Wed Oct 28)**
+
+- **Who:**
+  - Accountants and bookkeepers.
+  - Insurance agents.
+  - Business coaches.
+  - The chamber of commerce.
+  - SBDC and SCORE advisors (free government-backed small-business help).
+  - Print shops and marketing freelancers.
+  - Amatrix and HRC, in both directions.
+- **What you give them:** a one-page PDF and an intro email (Claude, Fri Oct 23). Their clients get a free Health Check. Any thank-you fee waits until after the first 5 referrals (D10).
+- **Rhythm:** 5 intros, then 2 short calls on most Wednesdays.
+
+**D. Teardown videos and a live teardown session**
+
+- **Videos (Nov 2, Nov 16, Dec 7):**
+  - 60–90 s screen recordings: "3 things wrong with this website."
+  - Use volunteer sites, or blur the business name.
+  - Claude writes the script and captures the screen; you record a voice-over (20 min).
+  - Post to LinkedIn, Facebook, and YouTube Shorts.
+- **Live session (Wed Nov 18):**
+  - A free 30-minute session at the chamber, library, or SBDC. Ask for the slot on Mon Oct 26.
+  - Review 3 volunteer sites live, phone first, then take Q&A and close with the free Health Check.
+  - Claude builds the kit (slides, sign-up form, follow-up email) by Nov 12.
+  - Speaking is the fastest credibility builder there is.
+
+**E. Local groups (from Mon Oct 26)**
+
+- Join 3 local Facebook business groups and set up a Nextdoor business page.
+- Answer website questions helpfully. Offer the free check only where group rules allow.
+
+**F. Lucent Veritas**
+
+- **LV sample pack (Mon Nov 2):** one page on how LV works, P1–P3 as samples, and a booking link.
+- **LinkedIn outreach:** 10 personal DMs every other Friday (Nov 6, Nov 20, Dec 4) to consultants, coaches, niche B2B firms, and associations.
+- **Co-authored paper:**
+  - Codex builds a shortlist of 10 possible co-authors (Nov 24).
+  - Claude writes a one-page proposal (Dec 2).
+  - You ask the top name (Dec 3) and hold a kickoff if they say yes (Dec 9). It becomes the Q1 lead paper.
+  - The co-author promotes it to their own network, and it's a live sample of the LV service.
+- **Press:** send each paper's top findings to local business journals and journalist-request services such as Qwoted. Each mention is third-party proof.
+
+**G. Paid test (gated)**
+
+- **Decided at the Nov 16 monthly review.** Run it only if conversion tracking works and four scorecards exist.
+- **If yes:** a Google Ads test from Mon Nov 30 to Dec 18 on high-intent searches ("website not showing on Google," "fix my website"), capped at $10–20 a day.
+- Check it on Dec 11. Pause it over the holidays; Q1 decides whether to scale.
+
+**H. Credibility for a founder who isn't from IT**
+
+- **Make it your pitch:** W2SA "translates technical findings into practical business decisions." Owners distrust jargon, and you speak their language.
+- **Let proof do the talking:**
+  - Before/after case studies with numbers.
+  - Google reviews.
+  - Client logos (with permission).
+  - The "How we score" page.
+- **Optional badge:** a free Google Analytics certification (Skillshop, ~2–3 h), slotted into Thanksgiving week.
+
 ---
 
-## 8. Weekly rhythm after launch (about 2 h a week for Sean)
+## 8. Weekly rhythm after launch (about 3–4 h a week for Sean)
 
-- **Mon**: scorecard (15 min), approve the week's queue (15 min), W2SA proof post.
-- **Tue**: paper teaser or snippet, plus an email every other week.
-- **Wed**: carousel or snippet.
-- **Thu**: paper launch and breakdown, or an evergreen recycle.
-- **Fri**: snippet, queue next week, review the next paper.
+- **Mon**: scorecard (15 min), approve the week's queue (15 min), W2SA proof post or teardown video. Claude builds the outreach list.
+- **Tue**: paper teaser or snippet, plus an email every other week. **Outreach batch (10).**
+- **Wed**: carousel or snippet. **Referral-partner calls.**
+- **Thu**: paper launch and breakdown, or an evergreen recycle. **Outreach batch (10).**
+- **Fri**: snippet, queue next week, review the next paper. **Every other week: 10 LV DMs or a teardown video.**
 - **Each paper runs on a 2-week cycle:**
   - Week A: teaser, then publish and breakdown.
   - Week B: snippet wave and carousel.
@@ -406,16 +514,16 @@ From the live sites, the money path is:
 
 | Week of | Main moves |
 |---|---|
-| Oct 12 | Decisions, Mailgun DNS, P2 generated (Wed). P1 announcement (Thu). **★ Machine running**, P1 carousel, security hour (Fri). P3 created, Facebook live, paper keep/archive (Sat). Week 1 queued, tunnel token rotated, first Facebook post (Sun). |
-| Oct 19 | Scorecard #1 (Mon). **★ P1 snippet wave 1 + email #1 (Tue 20).** P2 teaser, P3 final (Wed). **P2 publish (Thu 22).** |
-| Oct 26 | P2 snippet wave and carousel. Evergreen recycle. Email #2 drafted. |
-| Nov 2 | P3 teaser + email #2 (Tue). **P3 publish (Thu Nov 5).** |
-| Nov 9 | P3 snippet wave and carousel. Recycle P1's best performer. |
-| Nov 16 | Monthly review. **Email #3, mid-quarter push (new, Tue Nov 17).** |
-| Nov 23 | Thanksgiving week (Thu Nov 26): light, 2 scheduled posts. |
-| Nov 30 | Snippet wave 2 (P2/P3). Email #4 (Tue Dec 1). |
-| Dec 7 | Recap carousel: "3 papers, 15 takeaways" (Tue). **★ Email #5, Dec 10 push (kept: year-end timing suits a "2027 readiness" offer).** |
-| Dec 14 | **★ Q4 wrap, retro, Q1 plan (Thu Dec 17).** |
+| Oct 12 | Decisions, Mailgun DNS, P2 generated (Wed). P1 announcement (Thu). **★ Machine running**, P1 carousel, security hour (Fri). P3 created, Facebook live, paper keep/archive, Google Business Profile claimed (Sat). Week 1 queued, tunnel token rotated, first Facebook post (Sun). |
+| Oct 19 | Scorecard #1, first outreach list (Mon). **★ P1 snippet wave 1 + email #1 + outreach batch #1 (Tue 20).** P2 teaser, P3 final, GBP content (Wed). **P2 publish + outreach batch #2 (Thu 22).** Partner list + one-pager (Fri). |
+| Oct 26 | P2 snippet wave and carousel. Evergreen recycle. Email #2 drafted. Teardown slot requested, local groups joined, partner intros, review requests on. |
+| Nov 2 | Teardown video #1 (Mon). P3 teaser + email #2 (Tue). **P3 publish (Thu Nov 5).** First LV DMs (Fri). |
+| Nov 9 | P3 snippet wave and carousel. Recycle P1's best performer. Teardown session kit ready. |
+| Nov 16 | Monthly review incl. the ads decision, teardown video #2 (Mon). **Email #3, mid-quarter push (Tue Nov 17).** **★ Live teardown session (Wed Nov 18).** |
+| Nov 23 | Thanksgiving week (Thu Nov 26): light, scheduled posts, outreach follow-ups only. LV co-author shortlist. |
+| Nov 30 | Snippet wave 2 (P2/P3), ads test if approved (Mon). Email #4 (Tue Dec 1). **LV co-author ask (Thu Dec 3).** |
+| Dec 7 | Teardown video #3 (Mon). Recap carousel: "3 papers, 15 takeaways" (Tue). Co-author kickoff (Wed). **★ Email #5, Dec 10 push (kept: year-end timing suits a "2027 readiness" offer).** |
+| Dec 14 | Last outreach batch (Tue). **★ Q4 wrap, retro per channel, Q1 plan (Thu Dec 17).** |
 
 - **Print it:** `calendar/launch-calendar-print.pdf` has one week per landscape page, with a detail line and a checkbox for every item, plus a notes area.
 - **Import the dates:** `calendar/launch-calendar.ics` has one all-day event per work day, with that day's tasks in the description. It works with Google Calendar (Settings → Import) or Apple Calendar.
@@ -449,6 +557,9 @@ From the live sites, the money path is:
 | Company pages get little reach | Low impressions in week 1 | Sean's personal profile is already the main channel, and Facebook is live from Oct 17. |
 | Option B double-counts | Totals don't match Stripe | Match on Stripe object IDs and reconcile weekly. |
 | P2 fails review | Big fixes needed | Use the Oct 22 slot for an evergreen paper from the 20-paper library. P2 takes the Nov 5 slot. |
+| Outreach reads as spam | "Stop" replies or spam complaints | Fewer, more specific notes; honor every opt-out at once; never buy lists; switch trades if replies stay at zero after 3 weeks. |
+| Google Business Profile verification stalls | Not verified by Oct 30 | Keep everything else going; review requests wait until it's verified. |
+| Partners don't refer | No referrals by the Nov 16 review | Offer a co-hosted teardown for their clients instead of asking for referrals. |
 
 ---
 
@@ -536,7 +647,95 @@ W2SA
 [Postal address] · Unsubscribe: %unsubscribe_url%
 ```
 
-## Appendix C — Files in this folder
+## Appendix C — Growth templates
+
+**C1. W2SA outreach note (email or LinkedIn message)**
+
+```text
+Subject: Quick note about {business}'s website
+
+Hi {first_name},
+
+I run W2SA, a small-business website check-up service here in {area}.
+I took a quick look at {domain} and noticed two things:
+
+  • {finding 1 — e.g. "on a phone, the contact form doesn't submit"}
+  • {finding 2 — e.g. "you don't show up on Google Maps for '{trade} near me'"}
+
+{One line on what it costs — e.g. "That usually means mobile visitors
+who try to reach you give up."}
+
+If it's useful, we'll do a free Digital Health Check and send you a
+plain-English list of what to fix first. No rebuild pitch, no obligation:
+https://w2sa.online/digital-health-check?utm_source=outreach&utm_medium=outreach&utm_campaign=outreach-{trade}&utm_content=note-01
+
+Sean
+W2SA · {postal address}
+Not interested? Reply "no thanks" and I won't follow up.
+```
+
+- **Follow-up 1 (about day 4):** "Hi {first_name}, just making sure this reached you. Happy to send the full list of what I found on {domain}. Sean"
+- **Follow-up 2 (about day 10, the last one):** "Last note from me. If the timing's wrong, no problem. The free check is here whenever it's useful: {link}. Sean"
+
+**C2. Referral-partner intro**
+
+```text
+Hi {name},
+
+I run W2SA. We do plain-English website check-ups for small businesses:
+what's broken, what it's costing them, and what to fix first.
+
+A lot of your clients probably have a website that isn't pulling its
+weight. Would you be open to offering them a free Digital Health Check
+from us? There's nothing for you to manage — I'll send a short link and
+a one-page overview.
+
+Coffee or a 15-minute call next week?
+
+Sean
+```
+
+**C3. LV LinkedIn DM**
+
+```text
+Hi {name} — I run Lucent Veritas. We produce research-backed,
+human-reviewed white papers that firms like yours use to show their
+expertise. Here's our latest: {P3 link}.
+
+If a flagship paper on {their niche} would help you win clients in 2027,
+I'd be glad to show you how it works. Worth a 15-minute call?
+```
+
+**C4. LV co-author ask**
+
+```text
+Hi {name},
+
+I'd like to co-author a short research paper with you for Q1:
+"{working title}". You bring the expertise and a few client stories;
+Lucent Veritas handles the research, writing, and design. Both of us
+publish and promote it, and you're credited as co-author.
+
+It takes about 2 hours of your time across January. Open to a
+20-minute call to sketch it out?
+
+Sean
+```
+
+**C5. Live teardown session blurb (for the chamber, library, or SBDC)**
+
+```text
+Is your website losing you customers? A free 30-minute live teardown.
+
+Bring your website (or volunteer it in advance). We'll review three real
+sites live — on a phone first, the way your customers see them — and show
+the quick fixes that matter most. Every attendee gets a free Digital
+Health Check afterwards.
+
+{date} · {time} · {venue} · Hosted by Sean, W2SA
+```
+
+## Appendix D — Files in this folder
 
 - `LAUNCH_PLAYBOOK.md`: this playbook.
 - `LAUNCH_PLAYBOOK.pdf`: the same playbook as a PDF.
