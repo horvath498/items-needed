@@ -1,5 +1,7 @@
 # FBF Build Orchestrator Contract v1.0
 
+> **Non-canonical historical draft (1.0-draft.1).** The canonical, reconciled contract is in the MorseliQ repository at `docs/FBF_BUILD_ORCHESTRATOR_CONTRACT_v1.0.md`. Do not edit or cite this copy.
+
 | Field | Value |
 |---|---|
 | Status | **DRAFT — not ratified.** Becomes authoritative only when the project owner records ratification in §25. |
